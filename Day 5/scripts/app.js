@@ -5,6 +5,14 @@ var hrApp = angular.module('hrApp', ['ngRoute']);
 hrApp.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
+            .when('/employeeEdit/:employeeId', {
+                templateUrl: 'views/employeeEdit.html',
+                controller: 'EmployeeEditController'
+            })
+            .when('/employeeAdd', {
+                templateUrl: 'views/employeeAdd.html',
+                controller: 'EmployeeAddController'
+            })
             .when('/numbers', {
                 redirectTo: '/math'
             })

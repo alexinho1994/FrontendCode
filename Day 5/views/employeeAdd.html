@@ -7,15 +7,19 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group" >
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.firstName.$invalid }">
                         <!--TODO#HR2-->
+                        <label for="firstName">First Name:</label>
+                        <input id="firstName" name="firstName" ng-model="employee.firstName" required>
 
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.lastName.$invalid }">
                         <!--TODO#HR2-->
+                        <label for="lastName">Last Name:</label>
+                        <input id="lastName" name="lastName" ng-model="employee.lastName" required>
 
                     </div>
                 </div>
@@ -23,16 +27,18 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.email.$invalid }">
                         <!--TODO#HR2-->
-
+                        <label for="email">Email:</label>
+                        <input id="email" name="email" ng-model="employee.email" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.phoneNumber.$invalid }">
                         <!--TODO#HR2-->
-
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input  type="number" id="phoneNumber" name="phoneNumber" ng-model="employee.phoneNumber" required>
                     </div>
                 </div>
             </div>
@@ -50,17 +56,22 @@
                 </div>
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.jobTitle.$invalid }">
                         <!--TODO#HR2-->
+                        <label for="jobTitle">Job:</label>
+                        <select id="jobTitle" ng-model="employee.jobId" name="jobTitle" class="form-control" required
+                                ng-options="job.jobTitle for job in jobs track by job.jobId">
+                        </select>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.salary.$invalid }">
                         <!--TODO#HR2-->
-
+                        <label for="salary">Salary:</label>
+                        <input  type="salary" id="salary" name="salary" ng-model="employee.salary" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -78,8 +89,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.department.$invalid }">
                         <!--TODO#HR2-->
+                        <label for="department">Department:</label>
+                        <select id="department" ng-model="employee.departmentId" name="department" class="form-control" required
+                                ng-options="department.departmentName for department in departments track by department.departmentId">
+                        </select>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -96,6 +111,8 @@
                 <div class="col-md-7">
                     <div class="container">
                         <!--TODO#HR4-->
+                        <a class="btn btn-default" ng-model="saveBtn" ng-click="checkValid(employee)">Save</a>
+                        <a class="btn btn-default" ng-model="resetBtn" ng-click="reset()">Reset</a>
                     </div>
                 </div>
             </div>

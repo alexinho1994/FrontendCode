@@ -1,4 +1,4 @@
-hrApp.service('EmployeeService', ['$http', 'CommonResourcesFactory', function ($http, CommonResourcesFactory) {
+    hrApp.service('EmployeeService', ['$http', 'CommonResourcesFactory', function ($http, CommonResourcesFactory) {
         return {
             findById: function (employeeId) {
                 return $http.get(CommonResourcesFactory.findOneEmployeeUrl + employeeId)
